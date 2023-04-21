@@ -1,0 +1,47 @@
+Модуль 3. Домашнее задание 1. (после 10 вебинара)
+
+Решить следующие задачи:
+Написать программу, которая через prompt считывает число и выводит в консоль число равное 10% от введенного числа
+
+ let number = prompt("Input a number")
+ let procent = number /10
+ console.log(" 10% = ", procent )
+
+Написать программу, которая получает два числа и выводит наименьшее
+
+const number1 = +prompt("input  number1")
+ const number2 = +prompt("input  number2")
+ if( number1 < number2) {
+     console.log("least number = ", number1)
+ } else if( number1 > number2) {
+     console.log("least number = ", number2)
+ } else {
+     console.log("least number = ", number1)
+ }
+
+Написать программу, которая считывает через prompt число и выводит одно из следующих сообщений: ‘Число меньше 100’, ‘Число больше 100’ или ‘Число равно 100’
+
+const number1 = +prompt("input  number1")
+const number2 = 100
+  if( number1 < number2) {
+      console.log("Digit is less than 100")
+  } else if( number1 > number2) {
+      console.log("Digit is greater than 100")
+  } else {
+      console.log("Digit equals to 100")
+  }
+
+Написать программу, которая запрашивает у пользователя его имя и возраст (в годах) и выводит в консоль сообщение ‘Hello, <name>’, если пользователь совершеннолетний, или ‘Hi, <name>’, если пользователь несовершеннолетний.
+
+const userName = prompt("what is your name?")
+ const userAge = +prompt("How old are you (in years)?")
+ if (userAge > 0 && userAge < 123){
+     if(userAge < 18){
+         console.log(`Hi, ${userName}`)
+     } else{
+         console.log("Hello, " + userName) 
+     }
+ }
+ else {
+     console.log("Age is invalid") 
+ }
