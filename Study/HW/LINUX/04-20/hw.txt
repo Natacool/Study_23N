@@ -1,0 +1,86 @@
+
+localhost:~# whoami
+root
+localhost:~# cd ~
+
+localhost:~# ls -l
+total 20
+-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root             0 Apr 20 13:29 file1.txt
+-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
+drwxr-xr-x    3 root     root            55 Apr 20 13:33 nat
+-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
+localhost:~# pwd
+/root
+localhost:~# ls -l /home/
+total 0
+localhost:~#
+
+localhost:~# ls /home/user/start/
+ls: /home/user/start/: No such file or directory
+localhost:~# ls /home/user/
+ls: /home/user/: No such file or directory
+localhost:~# ls /home/
+localhost:~# ls -al
+total 52
+drwxr-xr-x    8 root     root           330 Jan  9  2021 .
+drwxrwxrwx   21 root     root           461 Apr 23 00:37 ..
+-rw-------    1 root     root          1549 Apr 23 00:37 .ash_history
+drwx------    4 root     root            80 Jul  5  2020 .cache
+drwx------    3 root     root            56 Apr 20 13:08 .config
+drwx------    3 root     root            59 Apr 20 13:08 .local
+drwx------    5 root     root           124 Jul  5  2020 .mozilla
+drwxr-xr-x    4 root     root           202 Jul  6  2020 .wine
+-rw-r--r--    1 root     root           114 Jul  5  2020 bench.py
+-rw-r--r--    1 root     root             0 Apr 20 13:29 file1.txt
+-rw-r--r--    1 root     root            76 Jul  3  2020 hello.c
+-rw-r--r--    1 root     root            22 Jun 26  2020 hello.js
+drwxr-xr-x    3 root     root            55 Apr 20 13:33 nat
+-rw-r--r--    1 root     root           151 Jul  5  2020 readme.txt
+localhost:~# ls -al /home/
+total 8
+drwxr-xr-x    2 root     root            37 Jul  5  2020 .
+drwxrwxrwx   21 root     root           461 Apr 23 00:38 ..
+localhost:~# mkdir -p /home/user/start
+localhost:~# mkdir -p /home/user/start
+localhost:~# ls /home/
+user
+localhost:~# ls /home/user/
+start
+localhost:~# touch /home/user/start/1.txt
+localhost:~# ls -l /home/user/start/1.txt
+-rw-r--r--    1 root     root             0 Apr 23 00:42 /home/user/start/1.txt
+localhost:~# echo Start >> /home/user/start/1.txt
+localhost:~# cat /home/user/start/1.txt
+Start
+localhost:~# date >> /home/user/start/1.txt
+localhost:~# cat /home/user/start/1.txt
+Start
+Sun Apr 23 00:46:56 UTC 2023
+localhost:~# mkdir -p /opt/task/
+localhost:~# cp /home/user/start/1.txt /opt/t
+task/  temu/
+localhost:~# cp /home/user/start/1.txt /opt/task/start.txt
+localhost:~# cat /opt/task/start.txt
+Start
+Sun Apr 23 00:46:56 UTC 2023
+
+
+localhost:~# ls -la / |tail -4
+dr-xr-xr-x   12 root     root             0 Apr 20 13:04 sys
+drwxrwxrwt    3 root     root           123 Jan  9  2021 tmp
+drwxr-xr-x   10 root     root           229 Jun 24  2020 usr
+drwxr-xr-x   16 root     root           348 Aug 27  2020 var
+
+localhost:~# ls -al / | tail -4 >> /opt/task/start.txt
+
+localhost:~# cat /opt/task/start.txt
+Start
+Sun Apr 23 00:46:56 UTC 2023
+dr-xr-xr-x   12 root     root             0 Apr 20 13:04 sys
+drwxrwxrwt    3 root     root           143 Jan  9  2021 tmp
+drwxr-xr-x   10 root     root           229 Jun 24  2020 usr
+drwxr-xr-x   16 root     root           348 Aug 27  2020 var
+localhost:~#  
+
