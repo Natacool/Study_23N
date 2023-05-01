@@ -1,0 +1,14 @@
+mkdir -p /opt/test/Nat
+cat ~/readme.txt > /opt/test/Nat/test.txt
+ps -ef | head -2 >> /opt/test/Nat/test.txt
+mkdir -p /tmp/test2/Nat2
+mv /opt/test/Nat/test.txt /tmp/test2/Nat2/new2.txt 
+vi /tmp/test2/Nat2/new2.txt
+
+
+go down till the last line by pressing "arrow down" key.
+dd
+dd
+:wq
+
+
