@@ -23,7 +23,7 @@
 // const last_elem = numbers_squared[numbers_squared.length-1]
 // console.log("last_elem", last_elem)
 
-let age = 14
+
 
 const user = {
     first_name: 'Ivan', 
