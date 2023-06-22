@@ -25,6 +25,7 @@ where
 
 2.Вывести товары от поставщиков 2 и 4 в порядке убывания цены.
 
+SELECT 
 FROM [Products]
     where
     SupplierID=2
@@ -35,7 +36,7 @@ FROM [Products]
 3.Вывести товары, добавив поле "ценасоскидкой" в 12.5%.
 
 SELECT *, 
-Price * .375 AS Price_disc
+Price * .875 AS Price_disc
 FROM [Products]
 
 4.У поставщиков 3 и 5 изменить тел/номера на произвольные значения.
