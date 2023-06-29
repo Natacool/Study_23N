@@ -1,0 +1,29 @@
+function sum(){ 
+  
+}
+
+sum()
+
+
+const obj = {
+  hello() {
+    console.log('hello');
+  }
+}
+
+obj.obj()
+//////////////////////////////////
+function sum(){ 
+  
+}
+
+sum()
+
+
+const obj = {
+  hello() {
+    console.log('hello');
+  }
+}
+
+obj.hello()
