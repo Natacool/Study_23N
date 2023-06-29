@@ -1,0 +1,29 @@
+1. Как скопировать на свой компьютер репозиторий из github.com, что должно быть сделано предварительно?
+- create a local dir
+- from github repo copy a repo-link for cloning
+- run "git clone repo-link" in the created folder
+
+
+2. Как создать git репозиторий из локального каталога на своем компьютере. Как его отправить на github.com?
+- create a folder and go to this folder
+- create a new file README.md
+- git init
+- git add README.md
+- git commit -m "Initial commit"
+- git remote add origin git@github.com:Natacool/TestRepo.git
+- git push -u origin master
+
+
+3. Как получить на локальный компьютер изменения с github.com
+git pull --rebase
+
+
+4. Какую информацию нам дают команда :
+git status
+this command shows if there are changes in local repo
+
+git log
+this command shows "who", "when" and "commits" (id and message) on the current branch
+
+git remote -v 
+this command shows remote repo information where we can push and fetch data/changes 
