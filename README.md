@@ -2,4 +2,3 @@
 TelRun for Nat
 
 - This repo will contain home works for different classes
-wrong changes
