@@ -1,0 +1,44 @@
+1.Как отказаться от изменений в файле (файлах) находящийся в рабочем каталоге (work directory)?
+
+	git reset --hard HEAD
+
+2.Как вернуть файл из индекса в рабочий каталог?
+
+	git checkout file_name
+
+3.Как отменить ошибочный commit ?
+	
+	git revert HEAD~1
+OR
+	git reset HEAD~1
+
+
+4.Как правильно исправить ошибочный commit после отправки на gitHub?
+
+	git commit --amend
+	git push origin main -f
+
+5.Как создать новую ветку и переключится в нее?
+
+	git checkout -b new_branch_name
+
+6.В чем отличение между fast-forward merge  and non fast-forfard merge?
+
+	fast-forward merge adds all commits from my branch to MAIN
+	non fast-forward merge adds the only final (the last) commits from my branch to MAIN
+
+7.Когда может возникнуть конфликт слияния веток, как  его разрешить?
+
+	
+	The main task of the git merge command is to merge individual branches and resolve any conflicting edits.
+	Sometimes the same content can be edited by several developers at once. 
+	If one developer tries to change code that another developer is editing, a conflict can occur. 
+	The easiest way to resolve the conflict is to edit the conflicting file in merge.txt.
+	Then git add merge.txt command is done to add the new merged content to the indexed files section.
+	A new commit is created to complete the merge.
+
+8.Можно ли удалить ветку? Как? 
+
+	git branch -d <branch_name>  /deletes the branch if it has already been fully merged in its upstream branch/
+	git branch -D <branch_name>  /deletes the branch of its merged status/
+
