@@ -31,14 +31,7 @@ WHERE
 SELECT *, 
 	CASE
     WHEN OrderID = 10248  THEN 'Delivered'
-    WHEN OrderID = 10249  THEN 'Delivered'SELECT 
-	ProductName,
-	Price * 1.1 Price_usd
-FROM Products
-JOIN OrderDetails ON Products.ProductID=OrderDetails.ProductID
-JOIN Orders ON Orders.OrderID=OrderDetails.OrderID
-    ORDER BY Price DESC
-	Limit 1
+    WHEN OrderID = 10249  THEN 'Delivered' 
     ELSE 'Not_Delivered'
     END AS Product_Status
 FROM Orders
