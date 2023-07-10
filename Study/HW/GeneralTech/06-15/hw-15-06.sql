@@ -1,18 +1,19 @@
-
+--HW from 15.06.2023 (280223)
  
 
---1 Вывести название и стоимость в USD одного самого дорогого проданного товара
+--Вывести название и стоимость в USD одного самого дорогого проданного товара
 
-SELECT 
-	ProductName,
-	Price * 1.1 Price_usd
-FROM Products
-JOIN OrderDetails ON Products.ProductID=OrderDetails.ProductID
-JOIN Orders ON Orders.OrderID=OrderDetails.OrderID
-    ORDER BY Price DESC
-	Limit 1;
+SELECT
+		Products.ProductName,
+    Products.Price * 1.1 AS Price_usd
+FROM OrderDetails
 
---2 Вывести два самых дорогих товара из категории Beverages из USA
+JOIN Products ON OrderDetails.ProductID=Products.ProductID
+
+ORDER BY Products.Price DESC
+LIMIT 1
+
+--Вывести два самых дорогих товара из категории Beverages из USA
 
 SELECT *
 FROM Products
@@ -23,34 +24,41 @@ WHERE
     and
     Suppliers.Country='USA'
 	ORDER BY Products.Price DESC
-	LIMIT 2;
+	LIMIT 2
 
---3 Вывести заказы, добавив поле доставлено (или нет), учитывая, что доставлены только 10248 и 10249
+--Вывести заказы, добавив поле доставлено (или нет), учитывая, что доставлены только 10248 и 10249
 
 SELECT *, 
 	CASE
     WHEN OrderID = 10248  THEN 'Delivered'
-    WHEN OrderID = 10249  THEN 'Delivered'
+    WHEN OrderID = 10249  THEN 'Delivered'SELECT 
+	ProductName,
+	Price * 1.1 Price_usd
+FROM Products
+JOIN OrderDetails ON Products.ProductID=OrderDetails.ProductID
+JOIN Orders ON Orders.OrderID=OrderDetails.OrderID
+    ORDER BY Price DESC
+	Limit 1
     ELSE 'Not_Delivered'
     END AS Product_Status
-FROM Orders;
+FROM Orders
 
---4 Вывести список стран, которые поставляют морепродукты
+--Вывести список стран, которые поставляют морепродукты
 
 SELECT DISTINCT Country
 FROM Suppliers
 JOIN Products ON Suppliers.SupplierID=Products.SupplierID
 JOIN Categories ON Products.CategoryID=Categories.CategoryID
 WHERE 
-	Categories.CategoryName='Seafood';
+	Categories.CategoryName='Seafood'
 
 
---5 Очистить поле ContactName у всех клиентов не из China
+--Очистить поле ContactName у всех клиентов не из China
 
 UPDATE Customers
 SET ContactName=''
 WHERE
-	NOT Country IN ('China');
+	NOT Country IN ('China')
 
 
 
