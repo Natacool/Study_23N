@@ -11,7 +11,7 @@ FROM OrderDetails
 JOIN Products ON OrderDetails.ProductID=Products.ProductID
 
 ORDER BY Products.Price DESC
-LIMIT 1
+LIMIT 1;
 
 --Вывести два самых дорогих товара из категории Beverages из USA
 
@@ -24,7 +24,7 @@ WHERE
     and
     Suppliers.Country='USA'
 	ORDER BY Products.Price DESC
-	LIMIT 2
+	LIMIT 2;
 
 --Вывести заказы, добавив поле доставлено (или нет), учитывая, что доставлены только 10248 и 10249
 
@@ -34,7 +34,7 @@ SELECT *,
     WHEN OrderID = 10249  THEN 'Delivered' 
     ELSE 'Not_Delivered'
     END AS Product_Status
-FROM Orders
+FROM Orders;
 
 --Вывести список стран, которые поставляют морепродукты
 
@@ -43,7 +43,7 @@ FROM Suppliers
 JOIN Products ON Suppliers.SupplierID=Products.SupplierID
 JOIN Categories ON Products.CategoryID=Categories.CategoryID
 WHERE 
-	Categories.CategoryName='Seafood'
+	Categories.CategoryName='Seafood';
 
 
 --Очистить поле ContactName у всех клиентов не из China
@@ -51,7 +51,7 @@ WHERE
 UPDATE Customers
 SET ContactName=''
 WHERE
-	NOT Country IN ('China')
+	NOT Country IN ('China');
 
 
 
