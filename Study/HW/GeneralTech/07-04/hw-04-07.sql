@@ -34,6 +34,7 @@ Price=CASE
 --Вывести данные о ???компаниях-перевозчиках???, /replaced by [Suppliers] / причем скрыть номера телефонов тех компаний,
 --которые из Australia (проекция: название_компании, номер_телефона)
 
+Select  SupplierName
 CASE
     When Country='Australia' Then ''
     ELSE Phone
