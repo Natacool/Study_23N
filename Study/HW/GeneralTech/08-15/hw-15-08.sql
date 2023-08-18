@@ -16,11 +16,8 @@ SELECT
 	Customers.Country,
     COUNT(*) as total_delivered_orders
 FROM Orders
-
-Join Products on OrderDetails.ProductID=Products.ProductID
 Join OrderDetails on Orders.OrderID=OrderDetails.OrderID
 Join Customers on Orders.CustomerID=Customers.CustomerID
-	
 Group by Customers.CustomerID
 Order by total_delivered_orders DESC
 Limit 3;
