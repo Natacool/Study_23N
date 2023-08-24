@@ -44,5 +44,5 @@ Limit 1;
 SELECT
 	Products.ProductID,
 	Products.ProductName,
-    Products.Price * .85 as Price_discount_15.5_perc
+    Products.Price * .845 as Price_discount_15.5_perc
 FROM Products;
