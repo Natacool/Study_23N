@@ -1,0 +1,49 @@
+--hw from 26.09.2023
+
+--1 Вывести всех юзеров с балансом более 100 EUR
+
+db.users.find(
+    { 
+	 balance: { $gt: 100}
+	}
+)
+
+--2 Вывести имена незаблокированных юзеров с балансом от 10 до 1000 EUR
+
+db.users.find(
+	
+    {
+        is_blocked: { $ne: true },
+        balance: { $gte: 10, $lte: 1000 }
+    },
+    { fullname: 1, balance: 1, _id: 0 }
+    
+)
+
+--3 Обнулить баланс заблокированных юзеров не из France
+
+db.users.updateMany(
+    { 
+        country: { $ne: 'France'},
+        is_blocked: true
+		},
+		{ $set: { balance: null } }
+		--//  { $mul: { balance: 0 } }//
+    
+)
+
+--4 Уменьшить баланс юзеру 5 на 3.5%
+
+db.users.updateOne(
+    { _id: 5 },
+	 { $mul: { balance: .965 } }
+)
+
+--5 Увеличить баланс незаблокированных юзеров на 0.5%
+
+db.users.updateMany(
+    {
+        is_blocked: { $ne: true }
+    },
+    { $mul: { balance: 1.005 } }
+)
